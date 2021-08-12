@@ -1,0 +1,258 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color: #f63;
+    --boder-color:#dbdbdb;
+    --header-height:120px;
+    --navbar-height:34px;
+    --header-with-search-height:calc(var(--header-height) - var(--navbar-height));
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+Facebook
+Instagram
+LinkedIn
+
+.grid__column-2{
+    padding: 0 5px;
+    width: 16.6667%;
+}
+
+.grid__column-2-4{
+    width: 20%;
+    padding: 0 5px;
+}
+
+
+.grid__column-10{
+    padding: 0 5px;
+    width: 83.3334%;
+}
+
+
+.item--sperate{
+    border-left: 2px solid rgba(113, 111, 111, 0.22);
+}
+/* animation */
+
+@keyframes fadeIN {
+    from{
+        opacity: 0;
+    }  
+    to{
+        opacity: 1;
+    }  
+}
+
+
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    margin: auto;
+    background-color: rgba(0,0,0,0.4);
+    animation: fadeIN linear 0.1s;
+}
+
+
+.modal__body{
+    position: relative;
+    margin: auto;
+    animation: growth linear 0.3s;
+}
+
+/* button style */
+.btn{
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 0;
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover{
+    background-color: rgba(0,0,0,0.2);
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled{
+    cursor: text;
+    background-color: #F9F9F9;
+    color: #ccc;
+}
+
+/* Download */
+.download{
+    width: 186px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    position: absolute;
+    left:8px;
+    padding: 4px;
+    top: 170%;
+    display: none;
+    animation: fadeIN ease-in 0.3s;
+    z-index: 1;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+.download::before{
+    width: 100%;
+    position: absolute;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 0;
+    top:-14px;
+}
+
+.download__qr-img{
+    width: 100%;
+}
+
+.download__app-link:nth-child(1){
+    margin-left: 10px;
+}
+
+.download__app-link:nth-child(2){
+    margin-right: 10px;
+}
+
+.download__app{
+    display: flex;
+    justify-content: space-between;
+}
+
+.download__app-img{
+    height: 16px;
+}
+
+/* Selection */
+
+.select-input{
+    display: inline-block;
+    min-width: 200px;
+    background-color: var(--white-color);
+    display: inline-flex;
+    height: 36px;
+    align-items: center;
+    border-radius: 2px;
+    cursor: pointer;
+    justify-content: space-between;
+    margin-left: 10px;
+    position: relative;
+}
+
+.select-input__label-icon,
+.select-input__label{
+    padding: 0 12px;
+}
+
+.select-input:hover .select-input__list{
+    display: block;
+}
+
+.select-input__list{
+    position: absolute;
+    background-color: var(--white-color);
+    top:110%;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0 0 3px #666;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__list::before{
+    position: absolute;
+    content:"";
+    height:10px;
+    left: 0;
+    top:-4px;
+    display: block;
+    width: 100%;
+}
+
+.select-input__link{
+    display: block;
+    text-decoration: none;
+    padding: 12px 12px;
+    color: var(--text-color);
+}
+
+.select-input__link:hover{
+    color: var(--primary-color);
+    background-color: #fafafa;
+}
+
+
+/* Pagination */
+.pagination{
+    list-style: none;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.pagination-item{
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.pagination-item--active.pagination-item__link{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item__link{
+    display: block;
+    text-decoration: none;
+    min-width: 40px;
+    height: 40px;
+    color: #939393;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+
